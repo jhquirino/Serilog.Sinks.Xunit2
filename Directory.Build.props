@@ -1,0 +1,10 @@
+<Project>
+ <PropertyGroup>
+   <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+   <OutputPath>$(MSBuildThisFileDirectory)build\bin\$(Configuration)</OutputPath>
+   <Version>1.0.0</Version>
+   <Authors>Jorge Quirino</Authors>
+   <Company>Jorge Quirino</Company>
+   <Copyright>Copyright (c) Jorge Alberto Hernández Quirino 2018. All rights reserved.</Copyright>
+ </PropertyGroup>
+</Project>

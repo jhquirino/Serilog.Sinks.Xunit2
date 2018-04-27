@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DocumentationFile>$(OutputPath)\Serilog.Sinks.Xunit.xml</DocumentationFile>
+    <IsPackable>true</IsPackable>
+    <Description>A Serilog sink that writes log events to the Xunit test output (for netcore2.0).</Description>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+    <PackageId>Serilog.Sinks.Xunit2</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.6.0" />
+    <PackageReference Include="xunit.abstractions" Version="2.0.1" />
+  </ItemGroup>
+
+</Project>
