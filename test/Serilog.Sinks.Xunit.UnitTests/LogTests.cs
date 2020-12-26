@@ -5,7 +5,7 @@
 //  <author>Jorge Alberto Hernández Quirino</author>
 // -----------------------------------------------------------------------
 using System;
-using Serilog;
+using Serilog.Configuration;
 using Xunit;
 using Xunit.Abstractions;
 using Xunit.Sdk;
@@ -47,6 +47,71 @@ namespace Serilog.Sinks.Xunit.UnitTests
             Assert.Contains(message, output.Output);
             Assert.Contains(exception.GetType().FullName, output.Output);
             Assert.Contains(exceptionMessage, output.Output);
+        }
+
+        [Fact]
+        public void When_init_with_null_sink_config_Then_throw_exception()
+        {
+            LoggerSinkConfiguration sinkConfig = null;
+            Assert.Throws<ArgumentNullException>(() =>
+                sinkConfig.Xunit(output)
+            );
+        }
+
+        [Fact]
+        public void When_init_with_null_sink_config2_Then_throw_exception()
+        {
+            LoggerSinkConfiguration sinkConfig = null;
+            Assert.Throws<ArgumentNullException>(() =>
+                sinkConfig.Xunit(outputHelper: output, formatter: null)
+            );
+        }
+
+        [Fact]
+        public void When_init_with_null_output_Then_throw_exception()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+                new LoggerConfiguration().WriteTo.Xunit(null)
+            );
+        }
+
+        [Fact]
+        public void When_init_with_null_output2_Then_throw_exception()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+                new LoggerConfiguration().WriteTo.Xunit(outputHelper: null, formatter: null)
+            );
+        }
+
+        [Fact]
+        public void When_init_with_null_template_Then_throw_exception()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+                new LoggerConfiguration().WriteTo.Xunit(output, outputTemplate: null)
+            );
+        }
+
+        [Fact]
+        public void When_init_with_null_formatter_Then_throw_exception()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+                new LoggerConfiguration().WriteTo.Xunit(output, formatter: null)
+            );
+        }
+
+        [Fact]
+        public void When_instance_with_null_output_Then_throw_exception()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+                new XunitSink(null)
+            );
+        }
+
+        [Fact]
+        public void When_instance_with_null_formatter_Then_is_initialized()
+        {
+            var sink = new XunitSink(output);
+            Assert.NotNull(sink);
         }
     }
 }

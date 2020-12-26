@@ -290,3 +290,8 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# SonarQube
+.sonar/
+.scannerwork/
+.sonarqube/

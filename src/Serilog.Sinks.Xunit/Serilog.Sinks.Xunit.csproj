@@ -7,6 +7,11 @@
     <Description>A Serilog sink that writes log events to the Xunit test output (for netcore2.0).</Description>
     <IncludeBuildOutput>true</IncludeBuildOutput>
     <PackageId>Serilog.Sinks.Xunit2</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>Serilog sink for xUnit</Title>
+    <PackageDescription>A Serilog sink that writes log events to the Xunit test output (for netcore2.0+).</PackageDescription>
+    <RepositoryUrl>https://github.com/yorchideas/Serilog.Sinks.Xunit2</RepositoryUrl>
+    <PackageTags>serilog;xunit;netcore2.0</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
